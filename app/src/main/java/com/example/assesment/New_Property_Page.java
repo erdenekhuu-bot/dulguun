@@ -1,7 +1,7 @@
 package com.example.assesment;
 
 import android.os.Bundle;
-
+import com.example.assesment.JsonList;
 import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Button;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,13 +73,27 @@ public class New_Property_Page extends Fragment {
         EditText edit_price = view.findViewById(R.id.edit_price);
         Button new_property = view.findViewById(R.id.new_property);
 
+
         new_property.setOnClickListener(v->{
-            Log.d("New Property", "Address: " + edit_address.getText().toString());
-            Log.d("New Property", "Suburb: " + edit_suburb.getText().toString());
-            Log.d("New Property", "State: " + edit_state.getText().toString());
-            Log.d("New Property", "Postcode: " + edit_postcode.getText().toString());
-            Log.d("New Property", "Price: " + edit_price.getText().toString());
+            String address = edit_address.getText().toString();
+            String suburb = edit_suburb.getText().toString();
+            String state = edit_state.getText().toString();
+            String postcode = edit_postcode.getText().toString();
+            String price = edit_price.getText().toString();
+
+            JsonList.addProperty(address, suburb, state, postcode, price);
+
+            for (JsonList item : JsonList.getPropertyList()) {
+                Log.d("NewProperty", "Address: " + item.getAddress());
+                Log.d("NewProperty", "Suburb: " + item.getSuburb());
+                Log.d("NewProperty", "State: " + item.getState());
+                Log.d("NewProperty", "Postcode: " + item.getPostcode());
+                Log.d("NewProperty", "Price: " + item.getPrice());
+                Log.d("NewProperty", "-------------------");
+            }
         });
+
+
         return view;
     }
 }
