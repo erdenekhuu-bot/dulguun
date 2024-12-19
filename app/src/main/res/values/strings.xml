@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Assesment</string>
+    <string name="appbar">PropertyShop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="address">Address</string>
+    <string name="suburb">Suburb</string>
+    <string name="state">State</string>
+    <string name="postcode">Postcode</string>
+    <string name="price">Price</string>
+    <string name="new_property">NEW PROPERTY</string>
+    <string name="save">SAVE</string>
+</resources>
