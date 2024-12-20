@@ -61,15 +61,12 @@ public class New_Property_Page extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_new__property__page, container, false);
-
         EditText edit_address = view.findViewById(R.id.edit_address);
         EditText edit_suburb = view.findViewById(R.id.edit_suburb);
         EditText edit_state = view.findViewById(R.id.edit_state);
         EditText edit_postcode = view.findViewById(R.id.edit_postcode);
         EditText edit_price = view.findViewById(R.id.edit_price);
         Button new_property = view.findViewById(R.id.new_property);
-
-
         new_property.setOnClickListener(v->{
             String address = edit_address.getText().toString();
             String suburb = edit_suburb.getText().toString();
@@ -82,7 +79,6 @@ public class New_Property_Page extends Fragment {
             Log.d("New_Property_Page", "Postcode: " + postcode);
             Log.d("New_Property_Page", "Price: " + price);
         });
-
         return view;
     }
 }
