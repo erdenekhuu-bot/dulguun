@@ -9,12 +9,17 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link New_Property_Page#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class New_Property_Page extends Fragment {
+
+    private List<JsonList> propertyList = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -73,11 +78,8 @@ public class New_Property_Page extends Fragment {
             String state = edit_state.getText().toString();
             String postcode = edit_postcode.getText().toString();
             String price = edit_price.getText().toString();
-            Log.d("New_Property_Page", "Address: " + address);
-            Log.d("New_Property_Page", "Suburb: " + suburb);
-            Log.d("New_Property_Page", "State: " + state);
-            Log.d("New_Property_Page", "Postcode: " + postcode);
-            Log.d("New_Property_Page", "Price: " + price);
+            JsonList newProperty = new JsonList(address, suburb, state, postcode, price);
+            propertyList.add(newProperty);
         });
         return view;
     }

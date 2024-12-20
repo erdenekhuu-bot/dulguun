@@ -37,6 +37,11 @@ public class JsonList {
         return price;
     }
 
+    public static void addProperty(String address, String suburb, String state, String postcode, String price) {
+        List<JsonList> propertyList = new ArrayList<>();
+        propertyList.add(new JsonList(address, suburb, state, postcode, price));
+    }
+
     public static List<JsonList> getSamplePropertyList() {
         List<JsonList> propertyList = new ArrayList<>();
         propertyList.add(new JsonList("360", "Pier Point Road", "Cairns", "4870", "200000"));
