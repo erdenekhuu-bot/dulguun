@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Button;
+import android.util.Log;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,6 +76,11 @@ public class New_Property_Page extends Fragment {
             String state = edit_state.getText().toString();
             String postcode = edit_postcode.getText().toString();
             String price = edit_price.getText().toString();
+            Log.d("New_Property_Page", "Address: " + address);
+            Log.d("New_Property_Page", "Suburb: " + suburb);
+            Log.d("New_Property_Page", "State: " + state);
+            Log.d("New_Property_Page", "Postcode: " + postcode);
+            Log.d("New_Property_Page", "Price: " + price);
         });
 
         return view;

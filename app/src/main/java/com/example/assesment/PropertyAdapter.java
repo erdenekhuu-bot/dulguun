@@ -18,7 +18,6 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
     private final List<JsonList> propertyList;
     private final Context context;
     private final FragmentManager fragmentManager;
-
     public PropertyAdapter(Context context, List<JsonList> propertyList, FragmentManager fragmentManager) {
         this.context = context;
         this.propertyList = propertyList;
@@ -65,7 +64,6 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
         TextView stateTextView;
         TextView postcodeTextView;
         TextView priceTextView;
-
         PropertyViewHolder(View itemView) {
             super(itemView);
             addressTextView = itemView.findViewById(R.id.addressTextView);
