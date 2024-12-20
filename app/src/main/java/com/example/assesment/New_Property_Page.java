@@ -81,16 +81,7 @@ public class New_Property_Page extends Fragment {
             String postcode = edit_postcode.getText().toString();
             String price = edit_price.getText().toString();
 
-            JsonList.addProperty(address, suburb, state, postcode, price);
-
-            for (JsonList item : JsonList.getPropertyList()) {
-                Log.d("NewProperty", "Address: " + item.getAddress());
-                Log.d("NewProperty", "Suburb: " + item.getSuburb());
-                Log.d("NewProperty", "State: " + item.getState());
-                Log.d("NewProperty", "Postcode: " + item.getPostcode());
-                Log.d("NewProperty", "Price: " + item.getPrice());
-                Log.d("NewProperty", "-------------------");
-            }
+            //JsonList.addProperty(address, suburb, state, postcode, price);
         });
 
 
