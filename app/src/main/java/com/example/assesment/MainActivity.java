@@ -1,15 +1,20 @@
 package com.example.assesment;
 
 import android.os.Bundle;
-import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private PropertyAdapter propertyAdapter;
+    private List<JsonList> propertyList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +26,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        propertyList = JsonList.getSamplePropertyList();
+
+        // adapter initialization
+        propertyAdapter = new PropertyAdapter(this, propertyList);
+        recyclerView.setAdapter(propertyAdapter);
     }
-
-    // RecyclerView  - displays a list of all properies for sale
-    // ViewPager - displays details for each individual property
-
 }
