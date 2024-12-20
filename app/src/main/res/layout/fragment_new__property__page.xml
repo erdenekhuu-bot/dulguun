@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
             android:text="@string/address"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/edit_address"

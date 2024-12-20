@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.List;
 
@@ -32,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
         propertyList = JsonList.getSamplePropertyList();
 
-        // adapter initialization
-        propertyAdapter = new PropertyAdapter(this, propertyList);
+        //setup fragment and list initing...
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        propertyAdapter = new PropertyAdapter(this, propertyList, fragmentManager);
         recyclerView.setAdapter(propertyAdapter);
+
     }
 }

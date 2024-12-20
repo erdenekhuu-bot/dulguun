@@ -1,17 +1,12 @@
 package com.example.assesment;
 
 import android.os.Bundle;
-import com.example.assesment.JsonList;
 import androidx.fragment.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Button;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,10 +75,7 @@ public class New_Property_Page extends Fragment {
             String state = edit_state.getText().toString();
             String postcode = edit_postcode.getText().toString();
             String price = edit_price.getText().toString();
-
-            //JsonList.addProperty(address, suburb, state, postcode, price);
         });
-
 
         return view;
     }

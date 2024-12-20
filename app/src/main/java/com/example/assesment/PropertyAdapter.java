@@ -1,11 +1,14 @@
 package com.example.assesment;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -13,9 +16,13 @@ import java.util.List;
 public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder> {
 
     private final List<JsonList> propertyList;
+    private final Context context;
+    private final FragmentManager fragmentManager;
 
-    public PropertyAdapter(MainActivity mainActivity, List<JsonList> propertyList) {
+    public PropertyAdapter(Context context, List<JsonList> propertyList, FragmentManager fragmentManager) {
+        this.context = context;
         this.propertyList = propertyList;
+        this.fragmentManager = fragmentManager;
     }
 
     @NonNull
@@ -35,7 +42,15 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
         holder.priceTextView.setText(property.getPrice());
 
         holder.itemView.setOnClickListener(v -> {
-
+            View fragmentContainer = ((MainActivity) context).findViewById(R.id.new_property_page);
+            View recyclerView = ((MainActivity) context).findViewById(R.id.recyclerView);
+            fragmentContainer.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+            New_Property_Page fragment = New_Property_Page.newInstance(property.getAddress(), property.getSuburb());
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.new_property_page, fragment); // Use the custom container ID
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
     }
 
