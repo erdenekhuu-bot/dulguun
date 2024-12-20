@@ -161,7 +161,6 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:text="BACK"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_price"
             tools:layout_editor_absoluteX="-14dp" />

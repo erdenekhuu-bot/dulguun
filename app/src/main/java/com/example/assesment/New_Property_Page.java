@@ -1,5 +1,6 @@
 package com.example.assesment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import java.util.List;
 public class New_Property_Page extends Fragment {
 
     private List<JsonList> propertyList = new ArrayList<>();
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,6 +74,7 @@ public class New_Property_Page extends Fragment {
         EditText edit_postcode = view.findViewById(R.id.edit_postcode);
         EditText edit_price = view.findViewById(R.id.edit_price);
         Button new_property = view.findViewById(R.id.new_property);
+        Button back = view.findViewById(R.id.back);
         new_property.setOnClickListener(v->{
             String address = edit_address.getText().toString();
             String suburb = edit_suburb.getText().toString();
@@ -80,6 +83,9 @@ public class New_Property_Page extends Fragment {
             String price = edit_price.getText().toString();
             JsonList newProperty = new JsonList(address, suburb, state, postcode, price);
             propertyList.add(newProperty);
+        });
+        back.setOnClickListener(v->{
+
         });
         return view;
     }
